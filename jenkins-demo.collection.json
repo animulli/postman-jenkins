@@ -1,8 +1,8 @@
 {
 	"variables": [],
 	"info": {
-		"name": "Jenkins demo",
-		"_postman_id": "4f4b290b-9197-488d-941a-40020b588cd0",
+		"name": "Jenkins demo fixed",
+		"_postman_id": "24942fbe-eb40-bc87-0e90-7dac799868b3",
 		"description": "",
 		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
 	},
@@ -15,11 +15,12 @@
 					"script": {
 						"type": "text/javascript",
 						"exec": [
-							"tests[\"Body contains username\"] = responseBody.has(data[\"username\"]);",
+							"tests[\"Body contains Host\"] = responseBody.has(\"host\");",
 							"",
-							"tests[\"Body contains URL\"] = responseBody.has(data[\"profile_url\"]);",
+							"tests[\"Body contains URL\"] = responseBody.has(\"url\");",
 							"",
-							"console.log(data);"
+							"console.log(data);",
+							""
 						]
 					}
 				}
@@ -44,7 +45,8 @@
 					"script": {
 						"type": "text/javascript",
 						"exec": [
-							"tests[\"Body contains html\"] = responseBody.has(\"html\");",
+							"tests[\"Body contains html\"] = responseBody.has(\"post\");",
+							"",
 							"",
 							"tests[\"Response time is less than 1000ms\"] = responseTime < 1000;"
 						]
@@ -63,7 +65,7 @@
 			},
 			"response": [
 				{
-					"id": "ff0fd4e4-2b11-463e-85cf-c60208ec5e33",
+					"id": "5e591d06-9a0b-44bc-a198-cb94c5b9fcab",
 					"name": "200 OK",
 					"status": "OK",
 					"code": 200,
